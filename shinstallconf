@@ -1,0 +1,8 @@
+
+# please see https://github.com/yazgazan/shinstaller for how to generate the installer
+
+output          auth-bash-installer.sh
+defaultprefix   /usr/local
+
+file auth.sh  bin bin/auth
+
