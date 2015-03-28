@@ -63,7 +63,7 @@ if [[ "$subject" == "user" ]]; then
       echo '  "domains": ['"$domains"'],'
       echo '  "enable": '"$en"''
       echo "}"
-    ) | curl -L -XPOST -d @- "$AUTH/user"
+    ) | curl -L -XPOST -H 'Content-Type: application/json' -d @- "$AUTH/user"
     echo
   elif [[ "$cmd" == "get" ]]; then
     uid=$1
@@ -111,7 +111,7 @@ if [[ "$subject" == "user" ]]; then
         echo ' "'"$field"'": "'"$value"'"'
       fi
       echo "}"
-    ) | curl -L -XPUT -d @- "$AUTH/user/$uid"
+    ) | curl -L -XPUT -H 'Content-Type: application/json' -d @- "$AUTH/user/$uid"
     echo
   elif [[ "$cmd" == "rm" ]]; then
     uid=$1
